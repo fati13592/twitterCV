@@ -1,0 +1,35 @@
+{% if p %}
+	<p>{{ p.name }}</p>
+
+	{% if reviews_list %}
+		<ul>
+		{% for r in reviews_list %}
+			<li> {{r.title }} : {{ r.text }}
+		{% endfor %}
+		</ul>
+	{% else %}
+		No hay reviews para este producto
+	{% endif %}
+{% else %}
+	Producto no encontrado
+{% endif %}
+
+<BR>
+
+{% load url from future %}
+
+<h1> Nueva review </h1>
+
+{% if error_message %}
+	<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<form action="{% url ’detail’ p.id %}" method="post">
+{% csrf_token %}
+
+	<label>Titulo</label> :
+	<input type="textfield" name="title"/><BR>
+	<label>Texto</a> :
+	<input type="textfield" name="text"/><BR>
+	<input type="submit" value="Anadir" />
+</form>

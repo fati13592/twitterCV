@@ -1,0 +1,2 @@
+
+int detectAndDisplay(char* img);

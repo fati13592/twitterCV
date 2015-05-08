@@ -1,0 +1,38 @@
+{% load url from future %}
+
+{% if product_list %}
+	<ul>
+	{% for p in product_list %}
+		<li> <a href="{% url 'detail' p.id %}">{{ p.name }}</a>
+	{% endfor %}
+	</ul>
+	{% else %}
+		<p> No existe ningun producto </p>
+	{% endif %}
+
+<BR>
+
+{% if user.is_authenticated %}
+<h1>Rango says... hello {{ user.username }}!</h1>
+{% else %}
+<h1>Rango says... hello world!</h1>
+{% endif %}
+
+<h1> Nuevo producto </h1>
+
+{% if error_message %}
+	<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<form action="{% url 'index' %}" method="post">
+	{% csrf_token %}
+	<label>Nombre</label> :
+	<input type="textfield" name="name"/><BR>
+	<label>Codigo de barras</a> :
+	<input type="textfield" name="barcode"/><BR>
+	<input type="submit" value="Anadir" />
+</form>
+
+<a href="/reviews/register/">Register Here</a>
+
+<a href="/reviews/login/">Login</a>
