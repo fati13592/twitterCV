@@ -33,6 +33,14 @@
 	<input type="submit" value="Anadir" />
 </form>
 
+
+{% if user.is_authenticated %}
+<a href="/reviews/logout/">Logout</a><br />
+{% else %}
+<a href="/reviews/register/">Register Here</a><br />
+<a href="/reviews/login/">Login</a><br />
+{% endif %}
+
 <a href="/reviews/register/">Register Here</a>
 
-<a href="/rango/login/">Login</a>
+<a href="/reviews/login/">Login</a>
