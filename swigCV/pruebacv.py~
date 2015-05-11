@@ -1,0 +1,5 @@
+import sys, os
+import opencv
+
+os.chdir('./fotos')
+print opencv.detectAndDisplay("./fotos/0000000.jpg")

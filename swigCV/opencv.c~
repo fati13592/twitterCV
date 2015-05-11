@@ -20,7 +20,7 @@ int detectAndDisplay(char* img)
         return (-1);
     };
     
-    Mat frame = imread("./"+img);
+    Mat frame = imread(img);
 
     std::vector<Rect> faces;
     Mat frame_gray;
@@ -29,6 +29,10 @@ int detectAndDisplay(char* img)
     Mat gray;
     string text;
     stringstream sstm;
+
+    if(frame.empty){
+       return 0;
+    }
 
     cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
     equalizeHist(frame_gray, frame_gray);

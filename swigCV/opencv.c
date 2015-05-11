@@ -30,6 +30,10 @@ int detectAndDisplay(char* img)
     string text;
     stringstream sstm;
 
+    if(frame.empty()){
+       return 0;
+    }
+
     cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
     equalizeHist(frame_gray, frame_gray);
 

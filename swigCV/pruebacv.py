@@ -1,4 +1,4 @@
 import sys
 import opencv
 
-print opencv.detectAndDisplay("./caras.jpg")
+print opencv.detectAndDisplay("./fotos/0000000.jpg")
