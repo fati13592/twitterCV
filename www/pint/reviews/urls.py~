@@ -6,4 +6,6 @@ urlpatterns=patterns('',
 	url(r'^(?P<product_id>\d+)/$',views.detail,name='detail'),
 	url(r'^register/$', views.register, name='register'), # ADD NEW PATTERN!
 	url(r'^login/$', views.user_login, name='login'),
+	url(r'^logout/$', views.user_logout, name='logout'),
+	url(r'^photos/$', views.find_photos, name='photos'),
 )

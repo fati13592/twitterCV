@@ -5,6 +5,7 @@ from reviews.models import Product,Review
 from reviews.forms import UserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from twitter import lista
 
 
 def index(request):
@@ -16,6 +17,7 @@ def index(request):
 	product_list=Product.objects.all()
 	context={'product_list':product_list}
 	return render(request,'reviews/index.html',context)
+
 
 def detail(request,product_id):
 	p=Product.objects.get(id=product_id)
@@ -113,11 +115,20 @@ def user_login(request):
 
 @login_required
 def user_logout(request):
-    # Since we know the user is logged in, we can now just log them out.
-    logout(request)
+	# Since we know the user is logged in, we can now just log them out.
+	logout(request)
 
-    # Take the user back to the homepage.
-    return HttpResponseRedirect('/reviews/')
+	# Take the user back to the homepage.
+	return HttpResponseRedirect('/reviews/')
+
+
+def find_photos(request):	
+	if request.POST.has_key('id'):
+		twitid=request.POST['id']
+		list = lista.return_list(twitid)
+		context={'list':list}
+		return HttpResponse(twitid)		
+		#return render(request,'reviews/photos.html',context)
 
 
 

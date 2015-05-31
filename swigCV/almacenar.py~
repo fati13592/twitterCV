@@ -31,13 +31,14 @@ def download(url,name):
 #albareysaavedra
 #EstebanPichel
 
-params = {'screen_name':'albareysaavedra','include_rts':1,'count':200}  
+params = {'screen_name':'DocampoBello','include_rts':1,'count':200}  
 	#con el count cuenta los rts aunque no los incluyas porque es asi de wai D:
 twurl = "https://api.twitter.com/1.1/statuses/user_timeline.json?"+urllib.urlencode(params)
 response, data = client.request(twurl)
 
 tweets = json.loads(data)
 
+"""
 count = 0
 for tweet in tweets:
     if 'extended_entities' in tweet:
@@ -52,6 +53,19 @@ for tweet in tweets:
 		else:
 			print 'tiene'
 			count+=1
+	    	#print media['media_url']
+"""
+lista = []
+for tweet in tweets:
+    if 'extended_entities' in tweet:
+	    for media in tweet['extended_entities']['media']:
+		url = media['media_url']		
+		download(url,str('./fotos/foto.jpg')) 
+		#print media['media_url']
+		if (opencv.detectAndDisplay(str('./fotos/foto.jpg'))) > 0:
+			#print url 
+			lista.append(url)
+		#os.remove(str('./fotos/foto.jpg'))
 	    	#print media['media_url']
 
 
