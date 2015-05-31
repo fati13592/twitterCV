@@ -1,0 +1,11 @@
+{% load url from future %}
+
+{% if list %}
+	<ul>
+	{% for url in list %}
+		<img src="{url}"> 
+	{% endfor %}
+	</ul>
+{% else %}
+	<p> No se han encontrado fotos D: </p>
+{% endif %}

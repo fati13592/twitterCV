@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Twitter Fotos - {% block title %} Wee :D {% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+            {% block body_block %} Cuerpo por defecto {% endblock %}
+        </div>
+
+        <hr />
+
+        <div>
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="/reviews/logout/">Logout</a></li>
+            {% else %}
+                <li><a href="/reviews/register/">Register Here</a></li>
+                <li><a href="/reviews/login/">Login</a></li>
+            {% endif %}
+            </ul>
+        </div>
+    </body>
+</html>
