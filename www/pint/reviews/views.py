@@ -125,10 +125,9 @@ def user_logout(request):
 def find_photos(request):	
 	if request.POST.has_key('id'):
 		twitid=request.POST['id']
-		list = lista.return_list(twitid)
-		context={'list':list}
-		return HttpResponse(twitid)		
-		#return render(request,'reviews/photos.html',context)
+		photos = lista.return_list(twitid)
+		context={'lista':photos}
+		return render(request,'reviews/photos.html',context)
 
 
 

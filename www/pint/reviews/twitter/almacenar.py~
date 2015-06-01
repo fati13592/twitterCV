@@ -31,25 +31,25 @@ def download(url,name):
 #albareysaavedra
 #EstebanPichel
 
-params = {'screen_name':'DocampoBello','include_rts':1,'count':200}  
+params = {'screen_name':'DocampoBello','include_rts':1,'count':20}  
 	#con el count cuenta los rts aunque no los incluyas porque es asi de wai D:
 twurl = "https://api.twitter.com/1.1/statuses/user_timeline.json?"+urllib.urlencode(params)
 response, data = client.request(twurl)
 
 tweets = json.loads(data)
 
-"""
+
 count = 0
 for tweet in tweets:
     if 'extended_entities' in tweet:
 	    for media in tweet['extended_entities']['media']:
 		numero = str('000000'+str(count))
 		nombre = str(numero+'.jpg')
-		download(media['media_url'],str('./fotos/'+nombre)) 
+		download(media['media_url'],str('./opencv/fotos/'+nombre)) 
 		#print media['media_url']
-		if (opencv.detectAndDisplay(str('./fotos/'+nombre))) == 0:
+		if (opencv.detectAndDisplay(str('./opencv/fotos/'+nombre))) == 0:
 			print 'no tiene'
-			os.remove(str('./fotos/'+nombre)) 
+			os.remove(str('./opencv/fotos/'+nombre)) 
 		else:
 			print 'tiene'
 			count+=1
@@ -60,7 +60,7 @@ for tweet in tweets:
     if 'extended_entities' in tweet:
 	    for media in tweet['extended_entities']['media']:
 		url = media['media_url']		
-		download(url,str('./fotos/foto.jpg')) 
+		download(url,str('./opencv/fotos/foto.jpg')) 
 		#print media['media_url']
 		if (opencv.detectAndDisplay(str('./fotos/foto.jpg'))) > 0:
 			#print url 
@@ -68,6 +68,8 @@ for tweet in tweets:
 		#os.remove(str('./fotos/foto.jpg'))
 	    	#print media['media_url']
 
+print lista
+"""
 
 
 

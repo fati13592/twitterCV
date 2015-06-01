@@ -33,7 +33,7 @@
 	<input type="submit" value="Anadir" />
 </form>
 
-<form action="{% url 'find_photos' %}" method="post">
+<form action="{% url 'photos' ident %}" method="post">
 	{% csrf_token %}
 	<label>TwitterID</label> :
 	<input type="textfield" name="id"/><BR>

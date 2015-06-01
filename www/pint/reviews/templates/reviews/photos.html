@@ -1,9 +1,9 @@
 {% load url from future %}
 
-{% if list %}
+{% if lista %}
 	<ul>
-	{% for url in list %}
-		<img src="{url}"> 
+	{% for imagen in lista %}
+		<img src={{imagen}}> 
 	{% endfor %}
 	</ul>
 {% else %}

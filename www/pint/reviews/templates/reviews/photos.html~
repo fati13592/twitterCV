@@ -1,11 +1,11 @@
 {% load url from future %}
 
-{% if list %}
+{% if lista %}
 	<ul>
-	{% for url in list %}
-		<img src="{url}"> 
+	{% for imagen in lista %}
+		<img src="{{imagen }}"> 
 	{% endfor %}
 	</ul>
-	{% else %}
-		<p> No se han encontrado fotos D: </p>
-	{% endif %}
+{% else %}
+	<p> No se han encontrado fotos D: </p>
+{% endif %}

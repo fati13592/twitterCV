@@ -32,7 +32,7 @@ def download(url,name):
 #EstebanPichel
 
 def return_list(twitterID):
-	params = {'screen_name':twitterID,'include_rts':1,'count':200}  
+	params = {'screen_name':twitterID,'include_rts':1,'count':50}  
 		#con el count cuenta los rts aunque no los incluyas porque es asi de wai D:
 	twurl = "https://api.twitter.com/1.1/statuses/user_timeline.json?"+urllib.urlencode(params)
 	response, data = client.request(twurl)
@@ -45,7 +45,7 @@ def return_list(twitterID):
 		    for media in tweet['extended_entities']['media']:
 			url = media['media_url']		
 			download(url,str('/home/fati/twitterRepo/www/pint/reviews/twitter/opencv/fotos/foto.jpg')) 
-			if (opencv.detectAndDisplay(str('./fotos/foto.jpg'))) > 0:
+			if (opencv.detectAndDisplay(str('/home/fati/twitterRepo/www/pint/reviews/twitter/opencv/fotos/foto.jpg'))) > 0:
 				lista.append(url)
 	return lista
 

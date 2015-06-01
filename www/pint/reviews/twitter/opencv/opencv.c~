@@ -10,7 +10,7 @@ int detectAndDisplay(char* img)
     using namespace std;
     using namespace cv;
 
-    string face_cascade_name = "/home/fati/twitterRepo/www/pint/reviews/twitter/opencv/haarcascade_frontalface_alt.xml";
+    string face_cascade_name = "./haarcascade_frontalface_alt.xml";
     CascadeClassifier face_cascade;
 
 //Load the cascade
