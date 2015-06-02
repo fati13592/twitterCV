@@ -1,11 +1,19 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
 {% load url from future %}
 
-{% if lista %}
-	<ul>
-	{% for imagen in lista %}
-		<img src={{imagen}}> 
-	{% endfor %}
-	</ul>
-{% else %}
-	<p> No se han encontrado fotos D: </p>
-{% endif %}
+{% block body_block %}
+
+	{% if lista %}
+		<ul>
+		{% for imagen in lista %}
+			<img src={{imagen}}> 
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p> No se han encontrado fotos D: </p>
+	{% endif %}
+
+{% endblock %}
