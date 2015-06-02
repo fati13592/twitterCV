@@ -6,14 +6,20 @@
 
 {% block body_block %}
 
-	{% if lista %}
-		<ul>
-		{% for imagen in lista %}
-			<img src={{imagen}}> 
-		{% endfor %}
-		</ul>
-	{% else %}
-		<p> No se han encontrado fotos D: </p>
-	{% endif %}
+
+
+{% if lista %}
+<div class="row">
+	{% for imagen in lista %}
+	  <div class="col-xs-6 col-md-3">
+	    <a href={{imagen}} class="thumbnail">
+	      <img src={{imagen}} alt="photo">
+	    </a>
+	  </div>
+	{% endfor %}
+{% else %}
+	<p> No se han encontrado fotos D: </p>
+{% endif %}
+</div>
 
 {% endblock %}

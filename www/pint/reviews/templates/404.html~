@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% load url from future %}
+
+
+{% block body_block %}
+
+
+<div class="page-header">
+  <h1>Error 404 <small>Page Not Found</small></h1>
+</div>
+<img src="http://static.tumblr.com/02e995ef893c46b4fd8fae46dd2aa57f/rl5cnll/KNsnjjg3b/tumblr_static_2z3hgkl3oskk8o0wwo00w08k4.gif"/>
+
+{% endblock %}

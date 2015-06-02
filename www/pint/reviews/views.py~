@@ -128,6 +128,8 @@ def find_photos(request):
 		photos = lista.return_list(twitid)
 		context={'lista':photos}
 		return render(request,'reviews/photos.html',context)
+	else:
+		return HttpResponseRedirect('/reviews/')		
 
 
 

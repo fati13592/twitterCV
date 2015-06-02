@@ -36,8 +36,6 @@
           <ul class="nav navbar-nav navbar-right">
 		{% if user.is_authenticated %}
 			<p class="navbar-text">Welcome <a href="#" class="navbar-link">{{ user.username }}</a>!</p>
-		{% else %}
-			<p class="navbar-text">Welcome !</p>
 		{% endif %}
 
                 <li><a href="{% url 'index' %}">Home</a></li>
