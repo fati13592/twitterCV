@@ -29,6 +29,10 @@ def detail(request,product_id):
 	context={'p':p,'reviews_list':reviews_list}
 	return render(request,'reviews/product_detail.html',context)
 
+
+#Lo que usaba antes para gestionar a los usuarios
+
+"""
 def register(request):
 
     # A boolean value for telling the template whether the registration was successful.
@@ -120,6 +124,8 @@ def user_logout(request):
 
 	# Take the user back to the homepage.
 	return HttpResponseRedirect('/reviews/')
+
+""" 
 
 
 def find_photos(request):	

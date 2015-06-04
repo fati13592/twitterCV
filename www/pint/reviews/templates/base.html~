@@ -36,17 +36,15 @@
           <ul class="nav navbar-nav navbar-right">
 		{% if user.is_authenticated %}
 			<p class="navbar-text">Welcome <a href="#" class="navbar-link">{{ user.username }}</a>!</p>
-		{% else %}
-			<p class="navbar-text">Welcome !</p>
 		{% endif %}
 
                 <li><a href="{% url 'index' %}">Home</a></li>
 
 		{% if user.is_authenticated %}
-			<li><a href="/reviews/logout/">Logout</a></li>
+			<li><a href="{% url 'auth_logout' %}?next=/reviews/">Logout</a></li>
 	        {% else %}
-		        <li><a href="/reviews/user/register/">Register Here</a></li>
-		        <li><a href="/reviews/user/login/">Login</a></li>
+		        <li><a href="{% url 'registration_register' %}">Register Here</a></li>
+		        <li><a href="{% url 'auth_login' %}">Login</a></li>
 	        {% endif %}
               </ul>
         </div>
